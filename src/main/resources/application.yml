@@ -35,4 +35,4 @@ springdoc:
     path: /cicd
 
 mqtt:
-  url: ssl://192.168.0.100:8883
+  url: tcp://192.168.0.100:1883
