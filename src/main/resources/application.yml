@@ -1,0 +1,38 @@
+spring:
+  main:
+    banner-mode: log
+  banner:
+    location: classpath:banner.txt
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      file-size-threshold: 64000000
+      location: /tmp
+      maxFileSize: 128000000
+      maxRequestSize: 128000000
+  batch:
+    job:
+      enabled: false
+  task:
+    scheduling:
+      pool:
+        size: 5
+
+logging.config: "classpath:logback.xml"
+
+server:
+  http:
+    port: 8081
+
+api:
+  prefix: /api
+
+springdoc:
+  api-docs:
+    path: /cicd
+
+mqtt:
+  url: tcp://192.168.0.100:1883
