@@ -10,6 +10,7 @@ import java.util.Collection;
 public class NullKettleConnector implements KettleConnector {
 
 	public static final NullKettleConnector INSTANCE = new NullKettleConnector();
+
 	@Override
 	public void startListening() throws KettleInternalException {
 		throw new UnsupportedOperationException();
@@ -32,6 +33,11 @@ public class NullKettleConnector implements KettleConnector {
 
 	@Override
 	public void turnOff(String s) throws KettleInternalException {
+		throw new UnsupportedOperationException();
+	}
+
+	@Override
+	public void heat(String s, int i) throws KettleInternalException {
 		throw new UnsupportedOperationException();
 	}
 
