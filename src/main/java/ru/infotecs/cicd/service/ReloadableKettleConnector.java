@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import ru.infotecs.cicd.ConnectionNotClosedException;
 import ru.infotecs.cicd.KettleConnector;
 import ru.infotecs.cicd.KettleInternalException;
+import ru.infotecs.cicd.KettleState;
 
 import java.util.Collection;
 import java.util.concurrent.atomic.AtomicReference;
@@ -53,8 +54,8 @@ public class ReloadableKettleConnector implements KettleConnector {
 	}
 
 	@Override
-	public Collection<String> getAvailableIds() {
-		return connector.get().getAvailableIds();
+	public Collection<KettleState> getAvailable() {
+		return connector.get().getAvailable();
 	}
 
 	@Override

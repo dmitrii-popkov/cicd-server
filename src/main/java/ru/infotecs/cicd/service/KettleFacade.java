@@ -33,8 +33,10 @@ public class KettleFacade {
 		kettleConnector.stopListening();
 	}
 	public Collection<KettleInfo> getAvailable() {
-		return kettleConnector.getAvailableIds()
-				.stream().map(KettleInfo::new).collect(Collectors.toList());
+		return kettleConnector.getAvailable()
+				.stream().map(state -> {
+					return new KettleInfo(state.id(), state.switchMode(), state.temperature());
+				}).collect(Collectors.toList());
 	}
 
 	public void turnOn(String id) {
