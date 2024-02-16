@@ -13,7 +13,7 @@
 
   <groupId>ru.infotecs.cicd</groupId>
   <artifactId>cicd-server</artifactId>
-  <version>0.0.1</version>
+  <version>0.1.0</version>
 
   <name>cicd-server</name>
 
@@ -38,31 +38,19 @@
 
   <repositories>
     <repository>
-      <id>infotecs.public</id>
-      <url>https://artifactory.infotecs.ru/artifactory/r652-tias-maven</url>
+      <id>github</id>
+      <url>https://maven.pkg.github.com/dmitrii-popkov/cicd-driver</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
     </repository>
-      <repository>
-        <id>cicd-driver-mvn-repo</id>
-        <url>https://raw.github.com/dmitrii-popkov/cicd-driver/mvn-repo/</url>
-        <snapshots>
-          <enabled>true</enabled>
-          <updatePolicy>always</updatePolicy>
-        </snapshots>
-      </repository>
   </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>infotecs.public</id>
-      <url>https://artifactory.infotecs.ru/artifactory/r652-tias-maven</url>
-    </pluginRepository>
-  </pluginRepositories>
 
   <distributionManagement>
     <repository>
-      <id>internal.repo</id>
-      <name>Temporary Staging Repository</name>
-      <url>file://${project.build.directory}/mvn-repo</url>
+      <id>github</id>
+      <name>GitHub OWNER Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/dmitrii-popkov/cicd-server</url>
     </repository>
   </distributionManagement>
 
@@ -96,7 +84,7 @@
     <dependency>
       <groupId>ru.infotecs.cicd</groupId>
       <artifactId>cicd-driver</artifactId>
-      <version>0.1.0</version>
+      <version>0.5.0</version>
     </dependency>
 <!--    3rd party dependencies-->
 
