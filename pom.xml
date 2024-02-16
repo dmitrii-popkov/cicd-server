@@ -13,7 +13,7 @@
 
   <groupId>ru.infotecs.cicd</groupId>
   <artifactId>cicd-server</artifactId>
-  <version>0.1.0</version>
+  <version>0.2.0</version>
 
   <name>cicd-server</name>
 
@@ -84,7 +84,7 @@
     <dependency>
       <groupId>ru.infotecs.cicd</groupId>
       <artifactId>cicd-driver</artifactId>
-      <version>0.5.0</version>
+      <version>0.6.0</version>
     </dependency>
 <!--    3rd party dependencies-->
 
@@ -188,28 +188,6 @@
             </gitFlowConfig>
 
           </configuration>
-        </plugin>
-        <plugin>
-          <groupId>com.github.github</groupId>
-          <artifactId>site-maven-plugin</artifactId>
-          <version>${github.maven-plugin}</version>
-          <configuration>
-            <message>Maven artifacts for ${project.version}</message>
-            <noJekyll>true</noJekyll>
-            <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-            <branch>refs/heads/mvn-repo</branch>
-            <includes><include>**/*</include></includes>
-            <repositoryName>cicd-server</repositoryName>
-            <repositoryOwner>dmitrii-popkov</repositoryOwner>
-          </configuration>
-          <executions>
-            <execution>
-              <goals>
-                <goal>site</goal>
-              </goals>
-              <phase>deploy</phase>
-            </execution>
-          </executions>
         </plugin>
         <plugin>
           <groupId>org.springframework.boot</groupId>

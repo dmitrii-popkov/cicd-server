@@ -41,6 +41,13 @@ public class KettleController {
 		kettleFacade.turnOff(id);
 	}
 
+	@Operation(summary = "Нагрев до заданной температуры")
+	@PostMapping(value = "/kettle/{id}/heat")
+	public void heat(@Parameter(description = "Идентификатор чайника", required = true) @PathVariable String id,
+					 @Parameter(description = "Заданная температура", required = true) @RequestParam int temp) {
+		kettleFacade.heat(id, temp);
+	}
+
 	@Operation(summary = "Перезагрузить брокер")
 	@PostMapping(value = "/kettle/reset")
 	public void reset() {
