@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.infotecs.cicd.api.KettleInfo;
 import ru.infotecs.cicd.service.KettleFacade;
@@ -39,13 +38,6 @@ public class KettleController {
 	@PostMapping(value = "/kettle/{id}/off")
 	public void turnOff(@Parameter(description = "Идентификатор чайника", required = true) @PathVariable String id) {
 		kettleFacade.turnOff(id);
-	}
-
-	@Operation(summary = "Нагрев до заданной температуры")
-	@PostMapping(value = "/kettle/{id}/heat")
-	public void heat(@Parameter(description = "Идентификатор чайника", required = true) @PathVariable String id,
-					 @Parameter(description = "Заданная температура", required = true) @RequestParam int temp) {
-		kettleFacade.heat(id, temp);
 	}
 
 	@Operation(summary = "Перезагрузить брокер")
