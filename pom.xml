@@ -38,10 +38,6 @@
 
   <repositories>
     <repository>
-      <id>infotecs.public</id>
-      <url>https://artifactory.infotecs.ru/artifactory/r652-tias-maven</url>
-    </repository>
-    <repository>
       <id>github</id>
       <url>https://maven.pkg.github.com/dmitrii-popkov/cicd-driver</url>
       <snapshots>
@@ -49,13 +45,6 @@
       </snapshots>
     </repository>
   </repositories>
-
-  <pluginRepositories>
-    <pluginRepository>
-      <id>infotecs.public</id>
-      <url>https://artifactory.infotecs.ru/artifactory/r652-tias-maven</url>
-    </pluginRepository>
-  </pluginRepositories>
 
   <distributionManagement>
     <repository>
@@ -95,7 +84,7 @@
     <dependency>
       <groupId>ru.infotecs.cicd</groupId>
       <artifactId>cicd-driver</artifactId>
-      <version>0.1.0</version>
+      <version>0.5.0</version>
     </dependency>
 <!--    3rd party dependencies-->
 
