@@ -72,4 +72,9 @@ public class ReloadableKettleConnector implements KettleConnector {
 	public void close() throws ConnectionNotClosedException {
 		connector.get().close();
 	}
+
+	@Override
+	public void heat(String s, int i) throws KettleInternalException {
+		connector.get().heat(s, i);
+	}
 }
