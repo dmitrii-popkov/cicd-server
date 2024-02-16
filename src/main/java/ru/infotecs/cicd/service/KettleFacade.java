@@ -44,4 +44,8 @@ public class KettleFacade {
 	public void turnOff(String id) {
 		kettleConnector.turnOff(id);
 	}
+
+	public void heat(String id, int temperature) {
+		kettleConnector.heat(id, temperature);
+	}
 }
