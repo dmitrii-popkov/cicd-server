@@ -40,4 +40,9 @@ public class NullKettleConnector implements KettleConnector {
 	public void close() throws ConnectionNotClosedException {
 		throw new UnsupportedOperationException();
 	}
+
+	@Override
+	public void heat(String s, int i) throws KettleInternalException {
+		throw new UnsupportedOperationException();
+	}
 }
